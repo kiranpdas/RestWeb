@@ -20,10 +20,11 @@ public class AlienResource {
 	
 	@GET
 	@Path("alien/{id}")
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	public Alien getAlien(@PathParam("id") int alienId) {
 		return alienRepo.getAlien(alienId);
 	}
+	
 	
 	@POST
 	@Path("alien")
